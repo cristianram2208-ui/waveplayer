@@ -1,0 +1,120 @@
+body {
+    background-color: #121212; /* Negro suave, mejor para la vista */
+    color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding-bottom: 120px; /* Hueco para el reproductor fijo */
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid #333;
+}
+
+/* FORMULARIO */
+.zona-usuario {
+    background: #1e1e1e;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.formulario input {
+    background: #333;
+    border: 1px solid #444;
+    color: white;
+    padding: 8px;
+    margin: 5px;
+    border-radius: 4px;
+}
+
+.formulario button {
+    background: #1db954; /* Verde */
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+/* GRID DE CANCIONES (Responsive) */
+.grid-container {
+    display: grid;
+    /* Esto hace que quepan las que puedan según el ancho de pantalla */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tarjeta {
+    background: #181818;
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.2s; /* Animación suave al pasar ratón */
+    cursor: pointer;
+    position: relative; /* Para poder posicionar el botón de borrar */
+}
+
+.tarjeta:hover {
+    background: #282828;
+    transform: scale(1.03);
+}
+
+.tarjeta img {
+    width: 100%;
+    border-radius: 4px;
+    aspect-ratio: 1/1; /* Mantiene la imagen cuadrada siempre */
+    object-fit: cover; /* Recorta si sobra imagen, no deforma */
+}
+
+/* Botón flotante de borrar */
+.btn-borrar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+/* Reproductor */
+#reproductor {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #000;
+    border-top: 1px solid #333;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.oculto { display: none; }
+
+.play-grande {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin: 0 15px;
+}
+
+.legal {
+    text-align: center;
+    font-size: 0.8rem;
+    color: white;
+    margin-top: 20px;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WavePlayer - Study Focus</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <header>
+        <h1>WavePlayer </h1>
+        <p>Concentración</p>
+    </header>
+
+    <section class="zona-usuario">
+        <h3> Añadir canción</h3>
+        <div class="formulario">
+            <input type="text" id="userTitulo" placeholder="Título">
+            <input type="text" id="userAudio" placeholder="URL de la canción.">
+            <input type="text" id="userImagen" placeholder="URL Imagen (Opcional)">
+            <button id="btnAdd" onclick="anadirCancion()">Añadir</button>
+        </div>
+    </section>
+
+    <main>
+        <div id="grid-canciones" class="grid-container">
+            </div>
+    </main>
+
+    <footer id="reproductor" class="oculto">
+        <div class="info-track">
+            <span id="titulo-player">Selecciona una pista...</span>
+        </div>
+
+        <div class="controles">
+            <button onclick="saltar(-10)"><i class="fas fa-undo"></i> 10s</button>
+            <button id="btnPlay" class="play-grande" onclick="togglePlay()">
+                <i class="fas fa-play"></i>
+            </button>
+            <button onclick="saltar(10)">10s <i class="fas fa-redo"></i></button>
+        </div>
+
+        <audio id="audioTag"></audio>
+
+        <div class="progreso">
+            <span id="tiempoActual">00:00</span>
+            <input type="range" id="barraProgreso" value="0" min="0" step="1">
+        </div>
+    </footer>
+
+    <div class="legal">
+        <p>Recursos obtenidos de Pixabay y Unsplash bajo licencia libre.</p>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

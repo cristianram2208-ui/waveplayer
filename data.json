@@ -1,0 +1,25 @@
+{
+  "canciones": [
+    {
+      "titulo": "Night",
+      "artista": "Pixabay Artists",
+      "imagen": "assets/img/img-1.jpg",
+      "audio": "assets/audio/cancion-1.mp3",
+      "duracion": "02:45"
+    },
+    {
+      "titulo": "Jazz",
+      "artista": "Chill Beats",
+      "imagen": "assets/img/img-2.jpg",
+      "audio": "assets/audio/cancion-2.mp3",
+      "duracion": "03:10"
+    },
+    {
+      "titulo": "Debug Mode",
+      "artista": "Piano Vibes",
+      "imagen": "assets/img/img-3.jpg",
+      "audio": "assets/audio/cancion-3.mp3",
+      "duracion": "02:15"
+    }
+  ]
+}
