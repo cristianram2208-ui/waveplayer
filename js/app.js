@@ -1,5 +1,5 @@
-// --- REFERENCIAS AL DOM ---
-// Guardo los elementos en variables para no buscarlos todo el rato (rendimiento)
+// 1. SELECCIÓN DE ELEMENTOS (Lo primero que lee JS)
+// Guardo los elementos en variables para no buscarlos todo el rato 
 const grid = document.getElementById('grid-canciones');
 const reproductor = document.getElementById('reproductor');
 const audioTag = document.getElementById('audioTag');
@@ -8,8 +8,11 @@ const btnPlay = document.getElementById('btnPlay');
 const barra = document.getElementById('barraProgreso');
 const tiempoTxt = document.getElementById('tiempoActual');
 
-// --- CARGA INICIAL (Fetch + LocalStorage) ---
+// 2. CARGA INICIAL (Al abrir la web)
 document.addEventListener('DOMContentLoaded', () => {
+    // Aseguro que el reproductor esté oculto al arrancar
+    reproductor.classList.add('oculto'); 
+
     // Uso fetch para pillar el JSON local
     fetch('data.json')
         .then(res => res.json())
@@ -28,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => console.error("Error cargando datos:", error));
 });
 
-// --- FUNCIÓN PARA PINTAR EN PANTALLA ---
+// 3. Pintar las tarjetas
 function pintarCanciones(lista) {
     grid.innerHTML = ''; // Limpio por si acaso
 
@@ -61,14 +64,16 @@ function pintarCanciones(lista) {
 
         // Evento Teclado: Para gente que no usa ratón (Accesibilidad)
         div.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') cargarYReproducir(cancion);
+            if (e.key === 'Enter') {
+                cargarYReproducir(cancion);
+            } 
         });
 
         grid.appendChild(div);
     });
 }
 
-// --- LÓGICA DE REPRODUCCIÓN ---
+// 4. Lógica de reproducción.
 function cargarYReproducir(cancion) {
     audioTag.src = cancion.audio;
     tituloPlayer.innerText = cancion.titulo;
@@ -80,6 +85,7 @@ function cargarYReproducir(cancion) {
     btnPlay.innerHTML = '<i class="fas fa-pause"></i>';
 }
 
+// 5. CONTROLES DEL REPRODUCTOR (Botones y barra)
 function togglePlay() {
     if (audioTag.paused) {
         audioTag.play();
@@ -95,16 +101,26 @@ function saltar(segundos) {
     audioTag.currentTime += segundos;
 }
 
-// --- BARRA DE PROGRESO ---
+// BARRA DE PROGRESO 
+// Actualizo la barra y el texto 
+// cada vez que avanza el audio (cada segundo)
 audioTag.addEventListener('timeupdate', () => {
-    // Actualizo la barra y el texto cada vez que avanza el audio
+    // La duración de la canción
     barra.max = audioTag.duration;
+
+    // El segundo y minuto actual de la canción
     barra.value = audioTag.currentTime;
-    
-    // Formateo simple de minutos y segundos
+
+    // Como el audio te lo da en segundos, 
+    // convertimos cada 60 segundos en un minuto
     let mins = Math.floor(audioTag.currentTime / 60);
     let segs = Math.floor(audioTag.currentTime % 60);
-    if(segs < 10) segs = '0' + segs;
+
+    // Poner el 0 delante cuando
+    // sea menos de 10 segundos
+    if(segs < 10) {
+      segs = '0' + segs;  
+    }
     tiempoTxt.innerText = `${mins}:${segs}`;
 });
 
@@ -113,7 +129,8 @@ barra.addEventListener('input', () => {
     audioTag.currentTime = barra.value;
 });
 
-// --- AÑADIR CANCIÓN (LocalStorage) ---
+// 6. GESTIÓN DE CANCIONES (Añadir y Borrar)
+//AÑADIR CANCIÓN
 function anadirCancion() {
     const titulo = document.getElementById('userTitulo').value;
     const audio = document.getElementById('userAudio').value;
@@ -121,7 +138,7 @@ function anadirCancion() {
 
     // Validación simple
     if (!titulo || !audio) {
-        alert("¡Falta el título o el audio!");
+        alert("Falta el título o el audio.");
         return;
     }
 
