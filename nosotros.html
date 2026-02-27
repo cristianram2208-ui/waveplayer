@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conoce al equipo de MyG Inmobiliaria en Zaragoza. Más de 15 años de experiencia en el sector inmobiliario.">
+    <title>Nosotros | M&G Inmobiliaria</title>
+    <link rel="stylesheet" href="css/styleNosotros.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    
+    <header id="header">
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="./fotos/myg-logo.webp" alt="MyG Inmobiliaria" class="logo-img" onerror="this.style.display='none'; document.getElementById('logo-texto').style.display='block';">
+                <span id="logo-texto" style="display: none;">MyG<span> Inmobiliaria</span></span>
+            </a>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" onclick="closeMenu()">Inicio</a></li>
+                
+                <li class="dropdown">
+                    <a href="servicios.html" onclick="toggleDropdown(event)">
+                        Servicios 
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="ventasPiso.html" onclick="closeMenu()">Venta de Propiedades</a></li>
+                        <li><a href="compraPiso.html" onclick="closeMenu()">Compra Segura</a></li>
+                        <li><a href="alquilerPiso.html" onclick="closeMenu()">Gestión de Alquileres</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="nosotros.html" class="active" onclick="closeMenu()">Nosotros</a></li>
+                <li><a href="contacto.html" onclick="closeMenu()">Contacto</a></li>
+            </ul>
+            
+            <button class="mobile-menu" id="mobileMenu" onclick="toggleMenu()" aria-label="Abrir menú de navegación">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- Page Header -->
+        <section class="page-header">
+            <h1>Conócenos</h1>
+            <p>La forma más personal de hacer inmobiliaria en Zaragoza</p>
+        </section>
+
+        <section class="about-intro">
+            <h2>Tu aliado inmobiliario de confianza</h2>
+            <p>En <strong>M&G Inmobiliaria</strong> es una empresa familiar constituida en 1998, con mas de 20 años de experiencia en el sector inmobiliario.</p>
+            <p>Hemos apostado por un trato directo y personal, en un ambiente familiar, pero no con ello exento de profesionalidad y conocimiento del mundo inmobiliario. Llevamos cada operación como si fuera la nuestra propia, con un asesoramiento financiero, administrativo y juridico si fuese necesario.</p>
+        </section>
+
+        <section class="mvv-section">
+            <div class="mvv-container">
+                <article class="mvv-card animate-on-scroll">
+                    <div class="mvv-icon"></div>
+                    <h3>Misión</h3>
+                    <p>No es la amplicación y abarcar mas zonas de mercado, sino que es mantener nuestra identidad, que es el trato directo y familiar al cliente.</p>
+                </article>
+                <article class="mvv-card animate-on-scroll">
+                    <div class="mvv-icon"></div>
+                    <h3>Visión</h3>
+                    <p>Ser una inmobiliaria reconocida en Zaragoza, reconocida por nuestro trato humano, excelencia en el servicio y resultados excepcionales para nuestros clientes.</p>
+                </article>
+                <article class="mvv-card animate-on-scroll">
+                    <div class="mvv-icon"></div>
+                    <h3>Valores</h3>
+                    <p>Honestidad, compromiso, profesionalidad y cercanía. Escuchamos, entendemos y actuamos siempre en beneficio de quienes confían en nosotros.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="stats-container">
+                <div class="stat-item animate-on-scroll">
+                    <h3>500+</h3>
+                    <p>Operaciones exitosas</p>
+                </div>
+                <div class="stat-item animate-on-scroll">
+                    <h3>+20</h3>
+                    <p>Años de experiencia</p>
+                </div>
+                <div class="stat-item animate-on-scroll">
+                    <h3>98%</h3>
+                    <p>Clientes satisfechos</p>
+                </div>
+                <div class="stat-item animate-on-scroll">
+                    <h3>24h</h3>
+                    <p>Tiempo de respuesta</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section">
+            <div class="section-header">
+                <h2>Nuestro equipo</h2>
+                <p>Profesional dedicado a hacer realidad tus sueños inmobiliarios</p>
+            </div>
+            <div class="team-grid">
+                <article class="team-member animate-on-scroll">
+                    <div class="team-photo"></div>
+                    <h3>José</h3>
+                    <div class="role">Director & Fundador</div>
+                    <p>Lidera el equipo con pasión y visión estratégica del mercado inmobiliario zaragozano.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="testimonials-section">
+            <div class="testimonials-container">
+                <div class="section-header">
+                    <h2>Lo que dicen nuestros clientes</h2>
+                    <p>Testimonios reales de experiencias reales</p>
+                </div>
+                <div class="testimonials-grid">
+                    <article class="testimonial-card animate-on-scroll">
+                        <div class="testimonial-stars" aria-label="5 estrellas">★★★★★</div>
+                        <p class="testimonial-text">"Excelente trato desde el primer día. Marta y su equipo nos ayudaron a encontrar el piso perfecto para nuestra familia. Profesionales y cercanos."</p>
+                        <p class="testimonial-author">- Ana y Pedro, compradores</p>
+                    </article>
+                    <article class="testimonial-card animate-on-scroll">
+                        <div class="testimonial-stars" aria-label="5 estrellas">★★★★★</div>
+                        <p class="testimonial-text">"Vendieron mi casa en menos de un mes y al precio que esperaba. No puedo estar más contenta con el servicio recibido. 100% recomendables."</p>
+                        <p class="testimonial-author">- María José, vendedora</p>
+                    </article>
+                    <article class="testimonial-card animate-on-scroll">
+                        <div class="testimonial-stars" aria-label="5 estrellas">★★★★★</div>
+                        <p class="testimonial-text">"Gracias a M&G encontré el piso ideal para mi inversión. Me asesoraron en todo momento y la gestión fue impecable. Volveré a contar con ellos."</p>
+                        <p class="testimonial-author">- Roberto, inversor</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>¿Quieres formar parte de nuestra historia?</h2>
+                <p>Estamos aquí para ayudarte en tu próximo paso inmobiliario.<br>Contacta con nosotros y descubre la diferencia de trabajar con profesionales que realmente se preocupan por ti.</br></p>
+                <a href="contacto.html" class="cta-button">Contactar</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>M&G Inmobiliaria</h3>
+                <p>La forma más personal de hacer inmobiliaria. Transformando viviendas en historias de vida desde 1998.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0xd5915a7c9b9071b:0x8b983380df59295e?sa=X&ved=1t:8290&ictx=111" target="_blank" rel="noopener noreferrer"> Paseo Teruel 40, Zaragoza</a></p>
+                <p><a href="tel:+34976535226"> 976 53 52 26</a></p>
+                <p><a href="mailto:info@inmobiliariamyg.com"> info@inmobiliariamyg.com</a></p>
+                <p>Horario: Lunes-Viernes: 10:00-13:30 17:00-20:00</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces</h3>
+                <p><a href="footer/privacidad.html">Política de Privacidad</a></p>
+                <p><a href="footer/aviso-legal.html">Aviso Legal</a></p>
+                <p><a href="footer/cookies.html">Cookies</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 M&G Inmobiliaria, S.L. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="./JavaScript/common.js"></script>
+    <script src="JavaScript/nosotros.js"></script>
+    
+</body>
+</html>
